@@ -115,7 +115,7 @@ class Client(object):
 
     def build_user(self, user_data):
         try:
-            qs = {User.USERNAME_FIELD: user_data['username']}
+            qs = {User.USERNAME_FIELD: user_data[User.USERNAME_FIELD]}
             user = User.objects.get(**qs)
         except User.DoesNotExist:
             user = User(**user_data)
